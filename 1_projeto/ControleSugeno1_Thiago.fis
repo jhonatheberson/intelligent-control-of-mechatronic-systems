@@ -1,0 +1,49 @@
+[System]
+Name='ControleSugeno1_Thiago'
+Type='sugeno'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=10
+AndMethod='min'
+OrMethod='max'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='erro'
+Range=[-30 30]
+NumMFs=5
+MF1='ErroNegativoForte':'gaussmf',[7.007 -30.75]
+MF2='ErroZero':'gaussmf',[1.274 5.551e-17]
+MF3='ErroPositivoForte':'gaussmf',[12.1 30.75]
+MF4='ErroPositivoFraco':'gaussmf',[6.37 15]
+MF5='ErroNegativoFraco':'gaussmf',[6.37 -15]
+
+[Input2]
+Name='dterro'
+Range=[-1 1]
+NumMFs=2
+MF1='DtNegativo':'trapmf',[-2 -1 0 0]
+MF2='DtPositivo':'trapmf',[0 0 1 2]
+
+[Output1]
+Name='SinalControle'
+Range=[0 1]
+NumMFs=3
+MF1='Fraco':'linear',[0.01 0.1 0]
+MF2='Medio':'linear',[0.05 1 0]
+MF3='Forte':'linear',[0.25 1 0]
+
+[Rules]
+1 1, 2 (1) : 1
+2 1, 2 (1) : 1
+3 1, 2 (1) : 1
+4 1, 2 (1) : 1
+5 1, 2 (1) : 1
+1 2, 2 (1) : 1
+2 2, 2 (1) : 1
+3 2, 2 (1) : 1
+4 2, 2 (1) : 1
+5 2, 2 (1) : 1
