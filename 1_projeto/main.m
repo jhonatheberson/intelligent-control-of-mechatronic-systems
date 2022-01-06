@@ -1,7 +1,7 @@
 clc;  %limpa valores do console
 clear all; %limpa valores do workspace
-controlador = readfis('ControleMamdani2_Thiago'); %importa o controlador fuzzy
-sim('Simulador_Tanques'); %roda a simulacao
+controlador = readfis('ControleMandani1_Jhonat'); %importa o controlador fuzzy
+sim('Simulador_Tanques_Thiago'); %roda a simulacao
 
 %%%% cria os graficos
 figure(1)
@@ -60,3 +60,6 @@ plotmf(controlador,'input',2);
 
 figure(8)
 plotmf(controlador,'output',1);
+
+figure(9)
+gensurf(controlador)

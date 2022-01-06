@@ -287,3 +287,8 @@ dist
 
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
+
+
+1_projeto/__MACOSX/
+
+1_projeto/slprj/
